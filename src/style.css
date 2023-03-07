@@ -43,10 +43,41 @@ main {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	background-size: cover;
+}
+
+.die-face.die-1 {
+	background-image: url(./img/die1.png);
+}
+
+.die-face.die-2 {
+	background-image: url(./img/die2.png);
+}
+
+.die-face.die-3 {
+	background-image: url(./img/die3.png);
+}
+
+.die-face.die-4 {
+	background-image: url(./img/die4.png);
+}
+
+.die-face.die-5 {
+	background-image: url(./img/die5.png);
+}
+
+.die-face.die-6 {
+	background-image: url(./img/die6.png);
+}
+
+.die-face.is-held {
+	opacity: 0.1;
+	cursor: not-allowed;
 }
 
 .die-num {
 	font-size: 4rem;
+	color: transparent;
 }
 
 .roll-dice {
