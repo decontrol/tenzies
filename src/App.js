@@ -6,6 +6,7 @@ import Confetti from 'react-confetti'
 export default function App() {
 	const [dice, setDice] = React.useState(allNewDice())
 	const [tenzies, setTenzies] = React.useState(false)
+	const [rollCount, setRollCount] = React.useState(0)
 
 	// keeping two diffrent states (dice and tenzies) in sync
 	// is a good reason to use Side Effects.
@@ -42,12 +43,14 @@ export default function App() {
 		if (tenzies) {
 			setTenzies(false)
 			setDice(allNewDice())
+			setRollCount(0)
 		} else {
 			setDice((prevDice) => {
 				return prevDice.map((die) => {
 					return die.isHeld !== true ? generateNewDie() : die
 				})
 			})
+			setRollCount((prevVal) => prevVal + 1)
 		}
 	}
 
@@ -81,6 +84,12 @@ export default function App() {
 			<button className='roll-dice' onClick={rollDice}>
 				{tenzies ? 'New Game' : 'Roll'}
 			</button>
+
+			<h2 className={!tenzies ? 'counting' : 'win'}>
+				{tenzies
+					? `You won after ${rollCount} tries!`
+					: `Roll Count: ${rollCount}`}
+			</h2>
 		</main>
 	)
 }

@@ -19,6 +19,7 @@ main {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	position: relative;
 }
 
 .title {
@@ -66,4 +67,17 @@ main {
 
 .roll-dice:active {
 	box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.counting {
+	color: purple;
+}
+
+.win {
+	color: green;
+	font-size: 5rem;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
